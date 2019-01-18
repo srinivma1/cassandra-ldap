@@ -195,7 +195,7 @@ public class LDAPAuthenticator implements IAuthenticator
             {
                 // If we got here it was likely the first node in the clusters first startup, and we need to
                 // sleep to ensure superuser and auth has been set up before we try login.
-                Uninterruptibles.sleepUninterruptibly(AuthKeyspace.SUPERUSER_SETUP_DELAY + 100, TimeUnit.MILLISECONDS);
+                Uninterruptibles.sleepUninterruptibly(AuthKeyspace.SUPERUSER_SETUP_DELAY + 30000, TimeUnit.MILLISECONDS);
                 state.login(new AuthenticatedUser(DEFAULT_SUPERUSER_NAME));
             }
         }
